@@ -16,4 +16,13 @@
 
 terraform {
   required_version = ">=0.12.6, <0.14"
+  
+    provider_meta "google" {
+    module_name = "foo/bar/baz/v1.0.0"
+  }
+
+  provider_meta "google_beta" {
+    module_name = "foo/bar/baz/v1.0.0"
+  }
+  
 }
