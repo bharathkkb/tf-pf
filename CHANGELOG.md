@@ -6,6 +6,71 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Extending the adopted spec, each change should have a link to its corresponding pull request appended.
 
+## 0.1.0 (2020-11-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* All null_resources for executing gcloud scripts have been removed. See the upgrade guide for details.
+* This change requires that you use the `shared_vpc` submodule to manage service account access. See the upgrade guide for details.
+* Using the gcloud module now requires `curl` to be installed. See the upgrade guide for details.
+
+### Features
+
+* Add `enable_shared_vpc_host_project` to create project as shared VPC host project ([#465](https://www.github.com/bharathkkb/tf-pf/issues/465)) ([3b269be](https://www.github.com/bharathkkb/tf-pf/commit/3b269bee7bb7aeda53751fb4d3d5b49b8e41fd6a))
+* add ability to select location for project bucket ([95b3dea](https://www.github.com/bharathkkb/tf-pf/commit/95b3dea1dcd083aafcfa7309d3ef14effc3e55db))
+* add apis related outputs to main module ([#470](https://www.github.com/bharathkkb/tf-pf/issues/470)) ([abc507f](https://www.github.com/bharathkkb/tf-pf/commit/abc507fdd0735ee655c350ce90c58d44816c5779))
+* Add budget notification channel ([#456](https://www.github.com/bharathkkb/tf-pf/issues/456)) ([9bc317e](https://www.github.com/bharathkkb/tf-pf/commit/9bc317e763f767d5666f6876fdae91b3e9a6b200))
+* Add budget_monitoring_notification_channels to modules including budgets ([#476](https://www.github.com/bharathkkb/tf-pf/issues/476)) ([d1665d1](https://www.github.com/bharathkkb/tf-pf/commit/d1665d10e7502eb382bc460a93a59439424c9c19))
+* Add Dataflow to Shared VPC API service accounts ([#458](https://www.github.com/bharathkkb/tf-pf/issues/458)) ([0c5adf3](https://www.github.com/bharathkkb/tf-pf/commit/0c5adf3d147233a41b3480d1b2bd178629e26fae))
+* Add impersonate_service_account to shared_vpc module to pass to core_project_factory ([#477](https://www.github.com/bharathkkb/tf-pf/issues/477)) ([e9f0c8f](https://www.github.com/bharathkkb/tf-pf/commit/e9f0c8fad2ccffac52a9733d91a53320c2d41643))
+* Add option for skipping the gcloud CLI download ([#393](https://www.github.com/bharathkkb/tf-pf/issues/393)) ([a534603](https://www.github.com/bharathkkb/tf-pf/commit/a5346030ef36e6982bac05e4e74f56154ab442d6))
+* add pre-commit to automatically format and create docs ([1754dd0](https://www.github.com/bharathkkb/tf-pf/commit/1754dd04a1d813360bf4ca7b9d9bae45e13bc7cf))
+* Add service identity provisioning support ([#450](https://www.github.com/bharathkkb/tf-pf/issues/450)) ([3954a89](https://www.github.com/bharathkkb/tf-pf/commit/3954a898bbc2a9b90852d7c33e57565cb04f14d0))
+* Add support for attaching projects to a VPC Service Controls perimeter ([#428](https://www.github.com/bharathkkb/tf-pf/issues/428)) ([7ec34ef](https://www.github.com/bharathkkb/tf-pf/commit/7ec34eff67152466cef1c0ff8f3b303d942bcdda))
+* Add use_tf_var_google_credentials_env_var variable ([#377](https://www.github.com/bharathkkb/tf-pf/issues/377)) ([64459de](https://www.github.com/bharathkkb/tf-pf/commit/64459de4409a64c5cd897cb5bc44eeacc4b67b96))
+* add versions ([f985f34](https://www.github.com/bharathkkb/tf-pf/commit/f985f3474f1a63e0477d4e995d14e767e11e9eb5))
+* Added shared_vpc_access submodule to enable GKE and Dataproc Service Account access. ([#434](https://www.github.com/bharathkkb/tf-pf/issues/434)) ([f16fd05](https://www.github.com/bharathkkb/tf-pf/commit/f16fd05302179cd2a20485781f3f640a8d5d88ba))
+* Enable GCS bucket versioning ([#431](https://www.github.com/bharathkkb/tf-pf/issues/431)) ([7a0d746](https://www.github.com/bharathkkb/tf-pf/commit/7a0d746862199f9345282b831684776b3c77ec7e))
+* Removed preconditions script from Terraform execution ([#478](https://www.github.com/bharathkkb/tf-pf/issues/478)) ([79f7c95](https://www.github.com/bharathkkb/tf-pf/commit/79f7c953a5267b0d22c2e9396136e27319320ae0))
+
+
+### Bug Fixes
+
+* Add billingbudgets.googleapis.com to precondition script. ([#493](https://www.github.com/bharathkkb/tf-pf/issues/493)) ([f9b53c3](https://www.github.com/bharathkkb/tf-pf/commit/f9b53c34425790cf95d8912db113956f2d5406ec))
+* Add dependency on service enablement. ([#387](https://www.github.com/bharathkkb/tf-pf/issues/387)) ([d3bd3ee](https://www.github.com/bharathkkb/tf-pf/commit/d3bd3ee2364d85bb8509b2f697c99f940419213c))
+* Add dependency on Shared VPC attachment ([#432](https://www.github.com/bharathkkb/tf-pf/issues/432)) ([c954990](https://www.github.com/bharathkkb/tf-pf/commit/c9549907429a524d669c6bd5a1b79050dd1e921e))
+* All dependencies on gcloud have been removed. ([#491](https://www.github.com/bharathkkb/tf-pf/issues/491)) ([5886a4e](https://www.github.com/bharathkkb/tf-pf/commit/5886a4e4430f551266710d6f635860963be6a4ec))
+* Allow 3.x provider version in fabric-project submodule. ([#361](https://www.github.com/bharathkkb/tf-pf/issues/361)) ([2b32b68](https://www.github.com/bharathkkb/tf-pf/commit/2b32b681a8c26be366a173e8d2095da5a66c7de2))
+* Allow users to supply dynamically generated list of subnets ([#362](https://www.github.com/bharathkkb/tf-pf/issues/362)) ([4f372dd](https://www.github.com/bharathkkb/tf-pf/commit/4f372dd5ca3029b39c293378fea6c1425b5384fc))
+* Bump version of terraform-google-gcloud module to 1.0.0 ([#399](https://www.github.com/bharathkkb/tf-pf/issues/399)) ([2889db1](https://www.github.com/bharathkkb/tf-pf/commit/2889db19aeb3322d6edf41d7b4aa40f320679650))
+* Correct SA custom name flag check in setup, fixes [#416](https://www.github.com/bharathkkb/tf-pf/issues/416) ([#418](https://www.github.com/bharathkkb/tf-pf/issues/418)) ([9da8158](https://www.github.com/bharathkkb/tf-pf/commit/9da81586f218c13c69f13a4034f606203ac8187c))
+* Fix regression in shared VPC service account submodule ([#438](https://www.github.com/bharathkkb/tf-pf/issues/438)) ([dd2dd99](https://www.github.com/bharathkkb/tf-pf/commit/dd2dd997650ebea9df220bc750a21a6e813cc962))
+* Fix Terraform 0.12+ warning on project_services ([#467](https://www.github.com/bharathkkb/tf-pf/issues/467)) ([e223f77](https://www.github.com/bharathkkb/tf-pf/commit/e223f77bd8510f5459ed4278f23c5b36f64836ee))
+* if group_name is empty, e-mail is also empty ([64e5652](https://www.github.com/bharathkkb/tf-pf/commit/64e565279b04d3e520e56a68c8b7378bb2cfde22))
+* Issue with empty subnet defaults and Shared VPC ([#382](https://www.github.com/bharathkkb/tf-pf/issues/382)) ([d31e068](https://www.github.com/bharathkkb/tf-pf/commit/d31e06839866d226412f0b4d4b7709bef80d7666))
+* relax version to allow 0.13 ([#437](https://www.github.com/bharathkkb/tf-pf/issues/437)) ([9eb64e2](https://www.github.com/bharathkkb/tf-pf/commit/9eb64e2217bef8477ae07e1a834c4bfb3f64273f))
+* Remove appengine.googleapis.com from required APIs ([#390](https://www.github.com/bharathkkb/tf-pf/issues/390)) ([b995924](https://www.github.com/bharathkkb/tf-pf/commit/b995924d7c33fde1fba029ee3682b7c6252cdd27))
+* Remove whitespace in test/setup-sa ([#495](https://www.github.com/bharathkkb/tf-pf/issues/495)) ([6d90ff3](https://www.github.com/bharathkkb/tf-pf/commit/6d90ff3869ab390fd3945c222db82c6abe44a456))
+* Restore shared VPC outputs ([#441](https://www.github.com/bharathkkb/tf-pf/issues/441)) ([1b558f3](https://www.github.com/bharathkkb/tf-pf/commit/1b558f38f85a75f7cc70f0b89ad25d81cc9ac402)), closes [#438](https://www.github.com/bharathkkb/tf-pf/issues/438)
+* Restore usage of var.enable_apis variable for project services submodule ([#473](https://www.github.com/bharathkkb/tf-pf/issues/473)) ([05d1465](https://www.github.com/bharathkkb/tf-pf/commit/05d1465d03608310deebb6edde1657d2a50dd0cf))
+* Upgrade gcloud module to 2.0.0 ([#449](https://www.github.com/bharathkkb/tf-pf/issues/449)) ([099cdcc](https://www.github.com/bharathkkb/tf-pf/commit/099cdcce28642b045337b4ca0a0c54a9949d9285))
+
+
+### Reverts
+
+* Revert "Add grant roles/storage.admin" ([e70eac5](https://www.github.com/bharathkkb/tf-pf/commit/e70eac5697770472423840ac69b407b91542b935))
+* Revert "Replace symlinked files with hard copies" ([425aa09](https://www.github.com/bharathkkb/tf-pf/commit/425aa09c08e7871dfe8e37f9dc3226c639147d84))
+* Revert "Run flake8 under Python 3" ([9266ef2](https://www.github.com/bharathkkb/tf-pf/commit/9266ef20cf28805740b2ea7f8c0cefdd8e490d68))
+* Revert "Remove 'compute' API from explicitly enabled APIs in tests" ([9bfeaff](https://www.github.com/bharathkkb/tf-pf/commit/9bfeaff4cf0796af1eb5b8b3093b1561723e1f25))
+* Revert "Make subnet name unique per test run" ([a48080c](https://www.github.com/bharathkkb/tf-pf/commit/a48080c8f60a155a9235e70638ebd955728317d9))
+* Revert "Use assertItemsEqual to remove need for sorting" ([44f2e40](https://www.github.com/bharathkkb/tf-pf/commit/44f2e406875b7bcbd6e22c68d7fc4b975003a5c4))
+
+
+### Miscellaneous Chores
+
+* Add upgrade guide for v8.0 ([#401](https://www.github.com/bharathkkb/tf-pf/issues/401)) ([dd1e204](https://www.github.com/bharathkkb/tf-pf/commit/dd1e204e219ef5f2f8ef14672d40d900036ef75e))
+
 ## [9.2.0](https://www.github.com/terraform-google-modules/terraform-google-project-factory/compare/v9.1.0...v9.2.0) (2020-10-16)
 
 
